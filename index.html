@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Balola Gdańsk - SPA kosmetologiczne nad Motławą</title>
+<meta name="description" content="Balola Gdańsk: zabiegi kosmetologiczne, technologie hi-tech, relaks, wellness i longevity. SPA na 5. piętrze Hotelu Gdańsk Boutique, z widokiem na Motławę.">
+<meta name="theme-color" content="#ffffff">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="img/hero.webp">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<!--
+  WIZUALIZACJA KONCEPCYJNA strony glownej Balola Gdansk (nie jest to oficjalna strona).
+  Tresci zabiegow, urzadzen i kosmetykow wziete z balola.pl (salon w Sopocie) - zakres w Gdansku DO POTWIERDZENIA.
+  Link Booksy: obecnie profil Balola Sopot (balolasopot.booksy.com) - DO UZUPELNIENIA profilem Balola Gdansk.
+  Telefon / e-mail Gdansk: DO UZUPELNIENIA (pokazane dane salonu w Sopocie).
+  Zdjecie Motlawy: Wikimedia Commons, fot. Silar, CC BY-SA 4.0 - ilustracja, nie wnetrze SPA.
+-->
+<header class="top" id="top">
+  <div class="top-in">
+    <a class="logo" href="#top" aria-label="Balola Gdańsk - strona główna">
+      <img src="img/logo-balola.png" alt="Balola" width="600" height="180">
+      <span class="logo-miasto">· Gdańsk ·</span>
+    </a>
+    <nav class="nav" id="nav" aria-label="Menu">
+      <a href="#zabiegi" data-i18n="nav1">Zabiegi</a>
+      <a href="#wizyta" data-i18n="nav2">Wizyta</a>
+      <a href="#technologie" data-i18n="nav3">Technologie</a>
+      <a href="#miejsce" data-i18n="nav4">Miejsce</a>
+      <a href="#kontakt" data-i18n="nav5">Kontakt</a>
+    </nav>
+    <div class="top-act">
+      <div class="lang" role="group" aria-label="Język / Language">
+        <button type="button" data-lang="pl" aria-pressed="true">PL</button>
+        <button type="button" data-lang="en" aria-pressed="false">EN</button>
+      </div>
+      <a class="btn btn-top booksy" href="https://balolasopot.booksy.com" target="_blank" rel="noopener" data-i18n="btnTop">Zarezerwuj</a>
+      <button class="burger" type="button" aria-label="Otwórz menu" aria-expanded="false" aria-controls="nav"><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="hero" aria-labelledby="h1">
+    <figure class="hero-foto">
+      <img src="img/hero.webp" alt="Zabieg relaksacyjny na plecy w gabinecie Balola" width="1800" height="1197" fetchpriority="high">
+    </figure>
+    <div class="hero-in">
+      <p class="hero-adr" data-i18n="heroAdr">Hotel Gdańsk Boutique, 5. piętro · ul. Szafarnia 9</p>
+      <h1 id="h1" data-i18n="h1">Kosmetologia i spokój z widokiem na Motławę</h1>
+      <p class="lead" data-i18n="lead">Zabiegi kosmetologiczne i technologie <span class="nw">hi-tech</span> połączone z relaksem, wellness i longevity. Druga, po Sopocie, lokalizacja Baloli - dla mieszkańców Trójmiasta i gości hotelu.</p>
+      <div class="hero-cta" id="heroCta">
+        <a class="btn booksy" href="https://balolasopot.booksy.com" target="_blank" rel="noopener" data-i18n="btnBook">Zarezerwuj w Booksy</a>
+        <a class="link" href="#zabiegi" data-i18n="btnZab">Zobacz zabiegi</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="sek" id="zabiegi" aria-labelledby="h-zab">
+    <div class="wrap">
+      <div class="sek-head">
+        <h2 id="h-zab" data-i18n="zabH">Zabiegi dobierane po diagnostyce skóry</h2>
+        <p data-i18n="zabP">Konsultacja kosmetologiczna z diagnostyką cery jest częścią każdego zabiegu. Dzięki niej plan pielęgnacji odpowiada na potrzeby skóry, a nie na modę.</p>
+      </div>
+      <div class="kafle">
+        <article class="kafel">
+          <img src="img/diagnostyka.webp" alt="Diagnostyka cery urządzeniem Observ 520x" loading="lazy" width="900" height="1348">
+          <h3 data-i18n="k1h">Diagnostyka cery</h3>
+          <p data-i18n="k1p">Observ 520x pokazuje to, czego nie widać gołym okiem: 8 trybów światła i zdjęcia przed i po.</p>
+        </article>
+        <article class="kafel">
+          <img src="img/twarz.webp" alt="Zabieg na twarz" loading="lazy" width="760" height="567">
+          <h3 data-i18n="k2h">Zabiegi na twarz</h3>
+          <p data-i18n="k2p">Rozjaśnianie przebarwień, kosmetyka twarzy, szyi i dekoltu, oxybrazja, masaż Kobido.</p>
+        </article>
+        <article class="kafel">
+          <img src="img/mezoterapia.webp" alt="Mezoterapia mikroigłowa" loading="lazy" width="760" height="567">
+          <h3 data-i18n="k3h">Mezoterapia i hi-tech</h3>
+          <p data-i18n="k3p">Dermapen, radiofrekwencja mikroigłowa Vivace, Geneo, Bloomea, termolifting Zaffiro.</p>
+        </article>
+        <article class="kafel">
+          <img src="img/laser.webp" alt="Zabieg laserowy" loading="lazy" width="760" height="567">
+          <h3 data-i18n="k4h">Laser: naczynka i depilacja</h3>
+          <p data-i18n="k4p">Zamykanie naczynek i depilacja laserowa MeDioStar Next, także na opaloną skórę.</p>
+        </article>
+        <article class="kafel">
+          <img src="img/oprawa-oka.webp" alt="Przedłużanie rzęs" loading="lazy" width="760" height="567">
+          <h3 data-i18n="k5h">Oprawa oka</h3>
+          <p data-i18n="k5p">Laminowanie i botox rzęs, przedłużanie i zagęszczanie, henna i regulacja brwi.</p>
+        </article>
+        <article class="kafel">
+          <img src="img/makijaz.webp" alt="Makijaż permanentny" loading="lazy" width="760" height="567">
+          <h3 data-i18n="k6h">Makijaż permanentny</h3>
+          <p data-i18n="k6p">Usta i brwi o idealnym kształcie i kolorze przez całą dobę, bez codziennego malowania.</p>
+        </article>
+      </div>
+      <ul class="chipy" aria-label="Pozostałe zabiegi">
+        <li data-i18n="c1">Terapie manualne</li>
+        <li data-i18n="c2">Medycyna estetyczna</li>
+        <li data-i18n="c3">Zabiegi na ciało</li>
+        <li data-i18n="c4">Skóra głowy i włosy</li>
+        <li data-i18n="c5">Manicure i pedicure</li>
+        <li data-i18n="c6">Podologia</li>
+      </ul>
+      <p class="uwaga" data-i18n="zabNote">Lista na podstawie oferty Balola Sopot. Zakres zabiegów w Gdańsku do potwierdzenia.</p>
+    </div>
+  </section>
+
+  <section class="sek sek-jasna" id="wizyta" aria-labelledby="h-wiz">
+    <div class="wrap wizyta">
+      <figure class="wizyta-foto">
+        <img src="img/konsultacja.webp" alt="Kosmetolog Baloli podczas konsultacji z klientką" loading="lazy" width="1000" height="1000">
+      </figure>
+      <div class="wizyta-txt">
+        <h2 id="h-wiz" data-i18n="wizH">Każda wizyta zaczyna się od rozmowy</h2>
+        <p data-i18n="wizP">Oczekujesz efektów od razu, nie po ostatnim z dziesięciu zabiegów. Dlatego stawiamy na urządzenia i dermokosmetyki o potwierdzonej skuteczności i na plan, który ma sens dla Twojej skóry.</p>
+        <ul class="lista">
+          <li data-i18n="w1"><strong>Konsultacja i diagnostyka.</strong> Kosmetolog ocenia kondycję skóry i rozmawia o Twoich oczekiwaniach.</li>
+          <li data-i18n="w2"><strong>Plan zabiegów.</strong> Łączymy technologie hi-tech z terapiami manualnymi, tak by efekt był trwały.</li>
+          <li data-i18n="w3"><strong>Zabieg i odpoczynek.</strong> W spokojnym SPA, z którego okien widać Motławę.</li>
+          <li data-i18n="w4"><strong>Pielęgnacja w domu.</strong> Dobieramy kosmetyki RVB LAB, PROXN, Diego dalla Palma, IMAGE Skincare.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="sek" id="technologie" aria-labelledby="h-tech">
+    <div class="wrap">
+      <div class="sek-head">
+        <h2 id="h-tech" data-i18n="techH">Technologie, którym ufamy</h2>
+        <p data-i18n="techP">Nieinwazyjne urządzenia, które dają widoczny efekt bez długiej rekonwalescencji. Wybrane z wyposażenia Baloli.</p>
+      </div>
+      <div class="urz">
+        <article>
+          <div class="urz-foto"><img src="img/stellar.webp" alt="Lumenis Stellar M22" loading="lazy" width="700" height="700"></div>
+          <h3>Stellar M22</h3>
+          <p data-i18n="u1">Modułowy system Lumenis: światło IPL i laser frakcyjny ResurFX na przebarwienia, naczynka i fotoodmładzanie.</p>
+        </article>
+        <article>
+          <div class="urz-foto"><img src="img/bloomea.webp" alt="Bloomea Binatural" loading="lazy" width="700" height="645"></div>
+          <h3>Bloomea Binatural</h3>
+          <p data-i18n="u2">Makroeksfoliacja, mikrowibracje i światło czerwone. Efekt zbliżony do resurfacingu, bez bólu i przerwy.</p>
+        </article>
+        <article>
+          <div class="urz-foto"><img src="img/observ.webp" alt="Observ 520x" loading="lazy" width="700" height="700"></div>
+          <h3>Observ 520x</h3>
+          <p data-i18n="u3">Diagnostyka skóry w ośmiu trybach oświetlenia, z raportem i porównaniem przed i po.</p>
+        </article>
+        <article>
+          <div class="urz-foto"><img src="img/dermaclear.webp" alt="Alma Lasers DermaClear" loading="lazy" width="600" height="900"></div>
+          <h3>DermaClear</h3>
+          <p data-i18n="u4">Hydrodermabrazja Alma Lasers: głębokie oczyszczenie, odżywienie i nawilżenie w jednym zabiegu.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="miejsce" id="miejsce" aria-labelledby="h-msc">
+    <figure class="miejsce-foto">
+      <img src="img/motlawa.webp" alt="Motława i Żuraw w Gdańsku" loading="lazy" width="1920" height="1272">
+      <figcaption data-i18n="fotCap">Motława w Gdańsku. Fot. Silar, Wikimedia Commons, CC BY-SA 4.0 (ilustracja)</figcaption>
+    </figure>
+    <div class="wrap miejsce-in">
+      <div class="miejsce-txt">
+        <h2 id="h-msc" data-i18n="mscH">Na 5. piętrze, nad Motławą</h2>
+        <p data-i18n="mscP">Balola Gdańsk mieści się w Hotelu Gdańsk Boutique przy ul. Szafarnia 9, kilka kroków od Głównego Miasta. Zabiegi kosmetologiczne łączymy tu z relaksem, wellness i longevity, czyli troską o kondycję skóry i samopoczucie na lata, a nie tylko na jeden wieczór.</p>
+      </div>
+      <div class="dla">
+        <div>
+          <h3 data-i18n="d1h">Dla mieszkańców Trójmiasta</h3>
+          <p data-i18n="d1p">Serie zabiegów, diagnostyka i plan pielęgnacji prowadzone przez kosmetologów Baloli. Wizyty po rezerwacji w Booksy.</p>
+        </div>
+        <div>
+          <h3 data-i18n="d2h">Dla gości hotelu</h3>
+          <p data-i18n="d2p">SPA jest w tym samym budynku. Zabieg na twarz po podróży albo chwila relaksu przed wieczorem w mieście. Strona i rezerwacja także po angielsku.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sek sek-jasna" id="balola" aria-labelledby="h-bal">
+    <div class="wrap balola">
+      <h2 id="h-bal" data-i18n="balH">Balola, od Sopotu do Gdańska</h2>
+      <div class="balola-txt">
+        <p data-i18n="balP1">Balola powstała w Sopocie z myślą o kobietach aktywnych, wymagających i świadomych. U podstaw leżą osobiste doświadczenia i długie poszukiwania skutecznych rozwiązań kosmetologicznych.</p>
+        <p data-i18n="balP2">Salon prowadzi mgr Marta Socha-Kilanowska, kosmetolog, biotechnolog i podolog. Każdy przypadek traktuje holistycznie, bo skóra jest lustrem organizmu, a efekt zabiegu zależy też od pielęgnacji w domu.</p>
+        <a class="link" href="https://balola.pl/" target="_blank" rel="noopener" data-i18n="balLink">Balola Sopot, ul. Tadeusza Kościuszki 4/1/B</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="sek kontakt" id="kontakt" aria-labelledby="h-kon">
+    <div class="wrap kontakt-in">
+      <div class="kontakt-txt">
+        <h2 id="h-kon" data-i18n="konH">Rezerwacja i dojazd</h2>
+        <address>
+          <strong>Balola Gdańsk</strong><br>
+          <span data-i18n="konHotel">Hotel Gdańsk Boutique, 5. piętro</span><br>
+          ul. Szafarnia 9, 80-755 Gdańsk
+        </address>
+        <p data-i18n="konP">Wizyty po rezerwacji. Termin i zabieg wybierzesz w Booksy, a na pierwszej wizycie zaczniemy od bezpłatnej konsultacji.</p>
+        <a class="btn booksy" href="https://balolasopot.booksy.com" target="_blank" rel="noopener" data-i18n="btnBook2">Zarezerwuj w Booksy</a>
+        <!-- Telefon i e-mail lokalizacji Gdansk: DO UZUPELNIENIA. Ponizej dane salonu w Sopocie. -->
+        <p class="kontakt-dod"><span data-i18n="konPyt">Pytania:</span> <a href="tel:+48583413071">+48 58 341 30 71</a> · <a href="mailto:sopot@balola.pl">sopot@balola.pl</a></p>
+        <p class="kontakt-dod"><a href="https://www.instagram.com/sopot_balola/" target="_blank" rel="noopener">Instagram</a> · <a href="https://www.facebook.com/balolasopot" target="_blank" rel="noopener">Facebook</a></p>
+      </div>
+      <div class="mapa">
+        <iframe title="Mapa: Hotel Gdańsk, ul. Szafarnia 9" src="https://www.openstreetmap.org/export/embed.html?bbox=18.6525%2C54.3458%2C18.6685%2C54.3525&amp;layer=mapnik&amp;marker=54.34917%2C18.66053" loading="lazy"></iframe>
+        <a class="link" href="https://www.google.com/maps/search/?api=1&amp;query=Hotel+Gda%C5%84sk+Szafarnia+9+Gda%C5%84sk" target="_blank" rel="noopener" data-i18n="konMapa">Wyznacz trasę w Mapach Google</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="stopka">
+  <div class="wrap stopka-in">
+    <a class="logo logo-s" href="#top" aria-label="Balola Gdańsk">
+      <img src="img/logo-balola.png" alt="Balola" width="600" height="180" loading="lazy">
+      <span class="logo-miasto">· Gdańsk ·</span>
+    </a>
+    <p data-i18n="stopka1">Balola Gdańsk · Hotel Gdańsk Boutique, ul. Szafarnia 9 · Balola Sopot · ul. Tadeusza Kościuszki 4/1/B</p>
+    <p class="stopka-mala" data-i18n="stopka2">Wizualizacja koncepcyjna strony. Treści i zdjęcia z balola.pl, zakres oferty w Gdańsku do potwierdzenia. Zdjęcie Motławy: Silar, CC BY-SA 4.0.</p>
+  </div>
+</footer>
+
+<div class="mob" id="mob" aria-hidden="true">
+  <a class="btn booksy" href="https://balolasopot.booksy.com" target="_blank" rel="noopener" tabindex="-1" data-i18n="btnBook3">Zarezerwuj w Booksy</a>
+  <a class="mob-dojazd" href="#kontakt" tabindex="-1" data-i18n="mobDoj">Dojazd</a>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
