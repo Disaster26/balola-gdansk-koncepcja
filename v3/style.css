@@ -318,10 +318,10 @@ strong{font-weight:500;color:var(--kakao)}
 .stopka h2{font-family:var(--sans);font-size:.82rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:#cdb4a2;margin-bottom:12px}
 .stopka ul{margin:0;padding:0;list-style:none}
 .stopka li{padding:4px 0}
-.stopka a{text-decoration:none;color:#f1e4d8}
-.stopka a:hover{text-decoration:underline}
+.stopka a:not(.wylinka-badge){text-decoration:none;color:#f1e4d8}
+.stopka a:not(.wylinka-badge):hover{text-decoration:underline}
 .stopka-dol{width:var(--wrap);margin:40px auto 0;padding-top:18px;border-top:1px solid rgba(230,214,200,.2);display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between;font-size:.84rem;color:#bba595}
-.stopka-dol a{color:#d9c6b6}
+.stopka-dol a:not(.wylinka-badge){color:#d9c6b6}
 @media (max-width:860px){
   .stopka-in{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:28px 20px}
   .stopka-in > :first-child{grid-column:1/-1}
@@ -342,3 +342,6 @@ strong{font-weight:500;color:var(--kakao)}
 @media (max-width:999px){.nav .nav-booksy{display:flex;justify-content:center;margin-top:18px;border:0;background:var(--cynamon);color:var(--mleko);padding:16px 0;letter-spacing:.14em}}
 .dwie figure.grafika img{aspect-ratio:auto}
 @media (max-width:860px){.cen-nav{display:none}.dwie figure.grafika{max-width:440px}}
+
+/* znak Wylinka w linii tekstu stopki - wyrownanie do tekstu */
+.stopka-dol .wylinka-badge{vertical-align:middle}
