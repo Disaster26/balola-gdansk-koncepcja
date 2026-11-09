@@ -146,11 +146,23 @@
     if (!v0) pokaz(false);
   }
 
-  /* formularz w wersji testowej nie wysyla danych */
-  var f = document.querySelector('form[data-demo]');
-  if (f) f.addEventListener('submit', function (e) {
-    e.preventDefault();
-    var i = f.querySelector('.form-info');
-    if (i) i.textContent = f.getAttribute('data-demo');
+  /* formularze: bez endpointu = wersja testowa (nic nie wysyla); z endpointem = wysylka fetch (JSON) */
+  document.querySelectorAll('form[data-form]').forEach(function (f) {
+    f.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var info = f.querySelector('.form-info');
+      var pokaz = function (t, kl) { if (info) { info.textContent = t; info.className = 'form-info' + (kl ? ' ' + kl : ''); } };
+      var ep = f.getAttribute('data-endpoint');
+      if (!ep) { pokaz(f.getAttribute('data-demo')); return; }
+      var hp = f.querySelector('[name="firma"]');
+      if (hp && hp.value) { pokaz(f.getAttribute('data-ok'), 'ok'); return; }
+      var btn = f.querySelector('button[type="submit"]');
+      if (btn) btn.disabled = true;
+      fetch(ep, { method: 'POST', body: new FormData(f), headers: { 'Accept': 'application/json' } })
+        .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json().catch(function () { return {}; }); })
+        .then(function (d) { if (d && d.ok === false) throw new Error('blad'); pokaz(f.getAttribute('data-ok'), 'ok'); f.reset(); })
+        .catch(function () { pokaz(f.getAttribute('data-err'), 'blad'); })
+        .then(function () { if (btn) btn.disabled = false; });
+    });
   });
 })();
