@@ -96,6 +96,60 @@
     });
     tor.addEventListener('click', function (e) { if (ruch) { e.preventDefault(); e.stopPropagation(); ruch = false; } }, true);
     odswiez();
+
+    /* powiekszenie: klik/tap otwiera pelny ekran, przesuwanie palcem, strzalki, Esc */
+    var imgs = els.map(function (el) { return el.querySelector('img'); });
+    var lb = null, lbTor, lbLicz, wroc;
+    var lbIdx = function () { return Math.round(lbTor.scrollLeft / lbTor.clientWidth); };
+    var lbOdswiez = function () { lbLicz.textContent = (lbIdx() + 1) + ' / ' + imgs.length; };
+    var lbIdz = function (i) { i = Math.max(0, Math.min(imgs.length - 1, i)); lbTor.scrollTo({ left: i * lbTor.clientWidth, behavior: 'smooth' }); };
+    var zamknij = function () {
+      lb.hidden = true; document.documentElement.classList.remove('lb-otwarty');
+      document.removeEventListener('keydown', klaw);
+      if (wroc) wroc.focus();
+    };
+    var klaw = function (e) {
+      if (e.key === 'Escape') zamknij();
+      if (e.key === 'ArrowRight') { e.preventDefault(); lbIdz(lbIdx() + 1); }
+      if (e.key === 'ArrowLeft') { e.preventDefault(); lbIdz(lbIdx() - 1); }
+    };
+    var zbuduj = function () {
+      lb = document.createElement('div');
+      lb.className = 'lb'; lb.hidden = true;
+      lb.setAttribute('role', 'dialog'); lb.setAttribute('aria-modal', 'true');
+      lb.setAttribute('aria-label', tor.getAttribute('aria-label') || '');
+      var strz = function (d) { return '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="' + d + '"/></svg>'; };
+      lb.innerHTML = '<ul class="lb-tor">' + imgs.map(function (im) {
+        return '<li><img src="' + im.getAttribute('data-full') + '" alt="' + im.alt.replace(/"/g, '&quot;') + '" loading="lazy" decoding="async"></li>';
+      }).join('') + '</ul>' +
+        '<button type="button" class="lb-x" aria-label="' + g.dataset.zamknij + '">' + strz('M6 6l12 12M18 6L6 18') + '</button>' +
+        '<button type="button" class="lb-s lb-p" aria-label="' + g.dataset.pop + '">' + strz('M15 5l-7 7 7 7') + '</button>' +
+        '<button type="button" class="lb-s lb-n" aria-label="' + g.dataset.nast + '">' + strz('M9 5l7 7-7 7') + '</button>' +
+        '<span class="lb-licz" aria-live="polite"></span>';
+      document.body.appendChild(lb);
+      lbTor = lb.querySelector('.lb-tor'); lbLicz = lb.querySelector('.lb-licz');
+      lb.querySelector('.lb-x').addEventListener('click', zamknij);
+      lb.querySelector('.lb-p').addEventListener('click', function () { lbIdz(lbIdx() - 1); });
+      lb.querySelector('.lb-n').addEventListener('click', function () { lbIdz(lbIdx() + 1); });
+      lbTor.addEventListener('click', function (e) { if (e.target.tagName !== 'IMG') zamknij(); });
+      var tt; lbTor.addEventListener('scroll', function () { clearTimeout(tt); tt = setTimeout(lbOdswiez, 60); }, { passive: true });
+    };
+    var otworz = function (i) {
+      if (!lb) zbuduj();
+      wroc = document.activeElement;
+      lb.hidden = false; document.documentElement.classList.add('lb-otwarty');
+      lbTor.style.scrollBehavior = 'auto'; lbTor.scrollLeft = i * lbTor.clientWidth; lbTor.style.scrollBehavior = '';
+      lbOdswiez();
+      lb.querySelector('.lb-x').focus();
+      document.addEventListener('keydown', klaw);
+    };
+    imgs.forEach(function (im, i) {
+      if (!im.getAttribute('data-full')) return;
+      im.setAttribute('tabindex', '0'); im.setAttribute('role', 'button');
+      im.setAttribute('aria-label', (g.dataset.powieksz || '') + ': ' + im.alt);
+      im.addEventListener('click', function () { otworz(i); });
+      im.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); otworz(i); } });
+    });
   });
 
   /* baner cookies: wybor zapisany na 12 miesiecy; mapa Google laduje sie od razu, przy odmowie zastepnik */
