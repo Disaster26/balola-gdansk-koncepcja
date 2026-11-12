@@ -153,13 +153,13 @@ strong{font-weight:600;color:var(--kakao)}
   .hero-adr{font-size:.86rem;margin-bottom:10px;line-height:1.4}
   .hero h1{font-size:clamp(2.1rem,1.1rem + 4.2vw,2.75rem);max-width:13ch}
   .hero .lead{font-size:1.02rem;margin-top:12px;line-height:1.5}
-  .hero-cta{margin-top:20px;gap:12px 22px}
+  .hero-cta{margin-top:24px;gap:12px 22px}
 }
 @media (max-width:999px) and (max-height:700px){
   .hero-in,.hero-A .hero-in{padding:12px 20px 32px}
   .hero h1{font-size:1.95rem}
   .hero .lead{font-size:.96rem;margin-top:8px}
-  .hero-cta{margin-top:14px}
+  .hero-cta{margin-top:24px}
   .hero-adr{margin-bottom:6px}
 }
 @media (max-width:599px){.hero-cta .btn{flex:1 1 auto}}
@@ -311,7 +311,7 @@ strong{font-weight:600;color:var(--kakao)}
   .ph-in{padding:20px 20px 34px}
   .ph h1{font-size:clamp(2.2rem,1.3rem + 3.6vw,2.9rem);max-width:none}
   .ph .lead{font-size:1rem;margin-top:12px}
-  .ph .hero-cta{margin-top:20px}
+  .ph .hero-cta{margin-top:24px}
 }
 
 /* kreski prowadzace - kropki jak w "· Gdansk ·" */
@@ -593,3 +593,44 @@ strong{font-weight:600;color:var(--kakao)}
 .lb-p{left:10px}.lb-n{right:10px}
 .lb-licz{position:absolute;bottom:18px;left:0;right:0;text-align:center;color:var(--papier);font-size:.95rem;font-variant-numeric:tabular-nums;opacity:.85}
 @media (max-width:640px){.lb-s{display:none}.lb-tor li{padding:60px 0 52px}}
+
+/* v7 (12.11.2026, uwagi klientki z 11.11) */
+.dojazd{margin-top:14px;font-size:.98rem;line-height:1.55;max-width:36em;padding-left:14px;border-left:2px solid var(--satyna)}
+.tel-mail{margin-top:12px;font-size:1.05rem;line-height:1.6}
+.tel-mail a{color:var(--kakao);text-decoration:none;border-bottom:1px solid var(--satyna)}
+.stopka .tel-mail{font-size:inherit;margin-top:10px}
+.stopka .tel-mail a{color:inherit;border-bottom-color:currentColor}
+.lista-kr.lista-1{grid-template-columns:minmax(0,1fr);max-width:420px}
+.marki{grid-template-columns:repeat(4,minmax(0,1fr))}
+.marki li:nth-child(4n+1){padding-left:0;border-left:0}
+.marki li:nth-child(n+5){border-top:1px solid var(--linia)}
+.marki-wiecej{display:flex;align-items:center}
+@media (max-width:1000px){.marki{grid-template-columns:repeat(2,minmax(0,1fr))}.marki li:last-child{grid-column:auto}.marki li:nth-child(n+5){border-top:0}}
+@media (max-width:520px){.marki{grid-template-columns:minmax(0,1fr)}}
+.osoba-inni{padding-top:4px}
+.osoba-inni h3{margin-top:0}
+.inni{margin:12px 0 0;padding:0;list-style:none}
+.inni li{display:flex;flex-direction:column;padding:10px 0;border-top:1px solid var(--linia)}
+.inni strong{font-family:var(--serif);font-weight:500;font-size:1.2rem;color:var(--kakao)}
+.inni span{font-size:.95rem;color:var(--mute)}
+.cen-poz .sub{grid-column:1 / -1;display:block}
+.cen-poz.dod .n{color:var(--txt)}
+.cen-poz.dod em{font-style:normal;color:var(--cynamon);font-size:.92em;white-space:normal}
+.tech-opis{min-width:0}
+.tech-opis p + p{margin-top:12px}
+.tech-fot{display:flex;flex-wrap:wrap;gap:12px;margin-top:18px}
+.tech-fot figure{margin:0;flex:0 1 calc(50% - 6px);max-width:240px;aspect-ratio:4/5;overflow:hidden}
+.tech-fot img{width:100%;height:100%;object-fit:cover;display:block}
+.marka-poz{grid-template-columns:minmax(0,4fr) minmax(0,8fr)}
+.marka-poz h2{font-size:clamp(1.55rem,1.2rem + .8vw,1.95rem)}
+@media (max-width:860px){.tech-opis{grid-column:1/-1}.marka-poz{grid-template-columns:minmax(0,1fr)}}
+.prawne h3{font-size:1.3rem;margin:26px 0 8px}
+.prawne ol{padding-left:28px;margin:12px 0}
+.prawne ol li{margin:8px 0}
+.prawne ol ul{margin:6px 0 0;padding-left:18px}
+.prawne-txt > p{margin-top:12px}
+.prawne-en{margin-top:18px;font-size:1.05rem;padding:14px 18px;border-left:2px solid var(--satyna);background:var(--ecru)}
+.prawne-wersja{margin-top:28px;color:var(--mute)}
+.prawne-dalej{margin-top:36px}
+.prawne a{overflow-wrap:anywhere}
+.cen-poz.grupa.wl .c{font-weight:600;font-size:1.05rem;color:var(--cynamon)}
