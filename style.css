@@ -551,18 +551,39 @@ strong{font-weight:600;color:var(--kakao)}
 @media (max-width:1000px){.okazje{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:520px){.okazje{grid-template-columns:minmax(0,1fr)}}
 
-/* zespol */
+/* zespol (opisy od klientki 18.11) */
 .zesp-head{margin-top:clamp(56px,6vw,96px);padding-top:28px;border-top:1px solid var(--linia);display:flex;flex-wrap:wrap;gap:8px 40px;align-items:baseline;justify-content:space-between}
 .zesp-head h3{font-size:1.9rem}
 .zesp-head p{color:var(--mute);font-size:.98rem}
-.zesp{margin:28px 0 0;padding:0;list-style:none;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(18px,2.4vw,36px)}
-.osoba-foto{margin:0;position:relative;aspect-ratio:4/5;overflow:hidden}
+.zesp{margin:28px 0 0;padding:0;list-style:none;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(40px,4vw,64px) clamp(22px,2.6vw,44px);align-items:start}
+.osoba{scroll-margin-top:calc(var(--head) + 16px)}
+.osoba-foto{margin:0;position:relative;aspect-ratio:4/5;overflow:hidden;background:var(--ecru)}
 .osoba-foto img{width:100%;height:100%;object-fit:cover}
-.osoba-ini{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;z-index:1;font-family:var(--serif);font-size:2.6rem;letter-spacing:.08em;color:rgba(251,247,241,.9)}
-.osoba h3{margin-top:16px;font-size:1.35rem}
-.osoba-rola{font-size:.95rem;color:var(--mute);margin-top:4px}
-.osoba .uwaga-proj{margin-top:6px;font-size:.84rem}
-@media (max-width:860px){.zesp{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.osoba-brak{background:radial-gradient(120% 90% at 30% 20%,var(--satyna-j) 0%,var(--satyna) 70%,#a07a66 100%)}
+.osoba-brak::before{content:"";position:absolute;left:0;right:0;bottom:22%;height:10px;background:var(--fala) center/40px 8px repeat-x;opacity:.22;filter:invert(1)}
+.osoba-ini{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;z-index:1;font-family:var(--serif);font-weight:300;font-size:clamp(3.4rem,2.6rem + 2vw,4.8rem);letter-spacing:.04em;color:rgba(251,247,241,.92)}
+.osoba h3{margin-top:18px;font-size:1.45rem}
+.osoba-rola{font-size:.95rem;color:var(--cynamon);margin-top:2px;font-weight:500}
+.osoba-opis{margin-top:12px}
+.osoba-opis p{font-size:1rem;line-height:1.62;margin:0 0 12px}
+.osoba-opis details p:first-of-type{margin-top:12px}
+.osoba-opis summary{list-style:none;cursor:pointer;display:inline-flex;align-items:center;gap:10px;min-height:44px;font-weight:500;font-size:.95rem;color:var(--kakao);border-bottom:1px solid var(--linia)}
+.osoba-opis summary::-webkit-details-marker{display:none}
+.osoba-opis summary::after{content:"";width:8px;height:8px;border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;transform:rotate(45deg) translateY(-2px);transition:transform .2s}
+.osoba-opis details[open] summary::after{transform:rotate(-135deg) translateY(-2px)}
+.osoba-opis .z-zam,.osoba-opis details[open] .z-otw{display:none}
+.osoba-opis details[open] .z-zam{display:inline}
+.osoba-opis details[open] summary{margin-top:2px}
+@media (max-width:999px){.zesp{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:600px){
+  .zesp{grid-template-columns:1fr;gap:44px}
+  .osoba{display:grid;grid-template-columns:40% 1fr;column-gap:18px;align-items:end}
+  .osoba-foto{grid-column:1}
+  .osoba-txt{grid-column:2;padding-bottom:4px}
+  .osoba-txt h3{margin-top:0;font-size:1.35rem}
+  .osoba-opis{grid-column:1 / -1;margin-top:16px}
+  .osoba-ini{font-size:2.8rem}
+}
 
 /* formularz - dodatki */
 .form-2{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:16px}
