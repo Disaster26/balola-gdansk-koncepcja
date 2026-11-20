@@ -658,3 +658,7 @@ strong{font-weight:600;color:var(--kakao)}
 .prawne-dalej{margin-top:36px}
 .prawne a{overflow-wrap:anywhere}
 .cen-poz.grupa.wl .c{font-weight:600;font-size:1.05rem;color:var(--cynamon)}
+/* zdjecie strefy saun od klientki (20.11): na telefonie cale w naturalnych proporcjach, na PC kadr na pare */
+.foto-sauna img{object-position:62% 50%}
+.miejsce-foto.foto-sauna img{object-position:70% 50%}
+@media (max-width:860px){.ph-foto.foto-sauna,.miejsce-foto.foto-sauna{height:auto;max-height:none;aspect-ratio:1337/1176}}
